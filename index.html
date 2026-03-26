@@ -192,6 +192,35 @@ font-size:26px;
 margin-bottom:15px;
 }
 
+/* RDV Section */
+.rdv-box{
+max-width:600px;
+margin:auto;
+background:var(--dark);
+padding:40px;
+border-left:3px solid var(--gold);
+}
+
+.rdv-box form{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.rdv-box input,
+.rdv-box textarea{
+padding:14px;
+background:#1a1a1a;
+border:1px solid rgba(255,255,255,.1);
+color:white;
+font-family:'Cairo',sans-serif;
+}
+
+.rdv-box textarea{
+min-height:120px;
+resize:none;
+}
+
 /* Footer */
 footer{
 text-align:center;
@@ -214,20 +243,51 @@ to{opacity:1}
 
 /* Responsive */
 @media(max-width:900px){
-header{padding:20px 30px}
-section{padding:100px 30px}
+
+header{
+padding:15px 20px;
+flex-direction:column;
+gap:10px;
+}
+
+nav{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+section{
+padding:80px 20px;
+}
 
 .hero-content{
 flex-direction:column;
 text-align:center;
+gap:30px;
 }
 
-.hero h1{font-size:34px}
+.hero h1{
+font-size:28px;
+}
+
+.hero p{
+font-size:15px;
+}
 
 .hero-image img{
-width:220px;
-height:280px;
+width:200px;
+height:250px;
 }
+
+.btn{
+padding:12px 25px;
+font-size:13px;
+}
+
+.rdv-box{
+padding:25px;
+}
+
 }
 </style>
 </head>
@@ -245,6 +305,7 @@ height:280px;
 <a href="#about" id="nav1">الملف</a>
 <a href="#fields" id="nav2">المجالات</a>
 <a href="#contact" id="nav3">اتصال</a>
+<a href="#rdv" id="nav4">حجز موعد</a>
 <button class="lang" onclick="toggleLang()">FR</button>
 </nav>
 </header>
@@ -301,6 +362,19 @@ height:280px;
 </div>
 </section>
 
+<!-- RDV Section -->
+<section id="rdv">
+<h2 class="section-title">حجز موعد</h2>
+<div class="rdv-box">
+<form action="mailto:avocatsof6@gmail.com" method="post" enctype="text/plain">
+<input type="text" name="Nom" placeholder="الاسم الكامل" required>
+<input type="email" name="Email" placeholder="البريد الإلكتروني" required>
+<textarea name="Message" placeholder="اكتب طلبك هنا..." required></textarea>
+<button type="submit" class="btn">إرسال الطلب</button>
+</form>
+</div>
+</section>
+
 <footer>
 © 2026 Cabinet maitre Sofiane Khelifi | AEH • TIZI OUZOU • Alger
 </footer>
@@ -317,6 +391,7 @@ document.getElementById("logoText").innerText="Maître Sofiane Khelifi";
 document.getElementById("nav1").innerText="Profil";
 document.getElementById("nav2").innerText="Domaines";
 document.getElementById("nav3").innerText="Contact";
+document.getElementById("nav4").innerText="Prendre RDV";
 document.getElementById("title").innerText="Avocat auprès du Conseil";
 document.getElementById("sub1").innerText="Accrédité auprès de la Cour Suprême et du Conseil d'État";
 document.getElementById("sub2").innerText="Expert en arbitrage commercial et sportif & médiation";
